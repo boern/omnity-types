@@ -11,7 +11,6 @@ use std::borrow::Cow;
 use thiserror::Error;
 
 pub mod rune_id;
-pub mod signer;
 pub mod ic_log;
 pub mod brc20;
 pub mod hub_types;
