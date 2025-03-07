@@ -1,0 +1,46 @@
+[package]
+name = "omnity-types"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+candid = { version = "0.10" }
+ciborium = "0.2.1"
+ic-cdk = "0.14"
+serde = "1"
+serde_json = "^1.0.117"
+serde_bytes = "^0.11.14"
+
+thiserror = "1"
+log = "0.4"
+hex = "0.4.3"
+sha2 = "0.10.6"
+
+serde_with = { version = "3.1.0", features = ["json"] }
+derive_more = { version = "0.99.17", default-features = false, features = [
+    "from",
+    "into",
+    "display",
+    "try_into",
+] }
+lazy_static = "1.4.0"
+ic-stable-structures = "0.6.5"
+
+# k256 = { version = "0.12.0", features = [
+#     "ecdsa",
+# ] } # Enable `custom` feature of k256's getrandom dependency. See lib.rs for more details.
+getrandom = { version = "0.2", features = ["custom"] }
+# log deps
+humantime = "2.1"
+ic-canisters-http-types = { git = "https://github.com/dfinity/ic", package = "ic-canisters-http-types" }
+serde_derive = "1.0.208"
+time = "0.3.36"
+ic-canister-log = "0.2"
+env_filter = "=0.1.1"
+rust_decimal = "1.36"
+rust_decimal_macros = "1.36"
+
+[dev-dependencies]
+# tokio = { version = "1.35.1", features = ["full"] }
+# rand = "0.8.4"

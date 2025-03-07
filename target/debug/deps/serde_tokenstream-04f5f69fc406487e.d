@@ -1,0 +1,10 @@
+/home/boern/workspace/ultraspace/omnity-types/target/debug/deps/libserde_tokenstream-04f5f69fc406487e.rmeta: /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/lib.rs /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/ibidem.rs /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/ordered_map.rs /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/serde_tokenstream.rs
+
+/home/boern/workspace/ultraspace/omnity-types/target/debug/deps/libserde_tokenstream-04f5f69fc406487e.rlib: /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/lib.rs /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/ibidem.rs /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/ordered_map.rs /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/serde_tokenstream.rs
+
+/home/boern/workspace/ultraspace/omnity-types/target/debug/deps/serde_tokenstream-04f5f69fc406487e.d: /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/lib.rs /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/ibidem.rs /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/ordered_map.rs /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/serde_tokenstream.rs
+
+/home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/lib.rs:
+/home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/ibidem.rs:
+/home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/ordered_map.rs:
+/home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/serde_tokenstream-0.2.2/src/serde_tokenstream.rs:
