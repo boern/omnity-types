@@ -1,5 +1,0 @@
-/home/boern/workspace/ultraspace/omnity-types/target/debug/deps/libdarling_macro-17592cfd9f67f823.so: /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/darling_macro-0.20.10/src/lib.rs
-
-/home/boern/workspace/ultraspace/omnity-types/target/debug/deps/darling_macro-17592cfd9f67f823.d: /home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/darling_macro-0.20.10/src/lib.rs
-
-/home/boern/.cargo/registry/src/mirrors.ustc.edu.cn-61ef6e0cd06fb9b8/darling_macro-0.20.10/src/lib.rs:
