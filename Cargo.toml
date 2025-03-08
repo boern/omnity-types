@@ -27,19 +27,27 @@ derive_more = { version = "0.99.17", default-features = false, features = [
 lazy_static = "1.4.0"
 ic-stable-structures = "0.6.5"
 
-# k256 = { version = "0.12.0", features = [
-#     "ecdsa",
-# ] } # Enable `custom` feature of k256's getrandom dependency. See lib.rs for more details.
+
 getrandom = { version = "0.2", features = ["custom"] }
 # log deps
 humantime = "2.1"
-ic-canisters-http-types = { git = "https://github.com/dfinity/ic", package = "ic-canisters-http-types" }
 serde_derive = "1.0.208"
 time = "0.3.36"
 ic-canister-log = "0.2"
 env_filter = "=0.1.1"
 rust_decimal = "1.36"
 rust_decimal_macros = "1.36"
+bs58 = "0.4.0"
+bech32 = "0.9.0"
+ic-canisters-http-types = { git = "https://github.com/dfinity/ic", package = "ic-canisters-http-types" }
+ic-crypto-sha2 = { git = "https://github.com/dfinity/ic", tag = "release-2024-01-18_23-01" }
+ic-btc-interface = { git = "https://github.com/dfinity/bitcoin-canister", rev = "9b239d1d67253eb14a35be6061e3967d5ec9db9d" }
+ethereum-types = { git = "https://github.com/paritytech/parity-common.git", package = "ethereum-types" }
+ic-solana = { git = "https://github.com/octopus-network/ic-solana/", branch = "feature/metaplex", package = "ic-solana" }
+
+[patch.crates-io.curve25519-dalek]
+git = "https://github.com/solana-labs/curve25519-dalek.git"
+rev = "b500cdc2a920cd5bff9e2dd974d7b97349d61464"
 
 [dev-dependencies]
 # tokio = { version = "1.35.1", features = ["full"] }

@@ -1,19 +1,22 @@
 use std::{
-    collections::{BTreeMap, HashMap}, str::FromStr
+    collections::{BTreeMap, HashMap},
+    str::FromStr,
 };
 
 use candid::CandidType;
+use error::Error;
 use ic_stable_structures::storable::Bound;
 use ic_stable_structures::Storable;
 use serde::{Deserialize, Serialize};
 use sha2::Digest;
 use std::borrow::Cow;
-use thiserror::Error;
 
-pub mod rune_id;
-pub mod ic_log;
+pub mod address;
 pub mod brc20;
+pub mod error;
 pub mod hub_types;
+pub mod ic_log;
+pub mod rune_id;
 
 pub type Signature = Vec<u8>;
 pub type Seq = u64;
@@ -26,7 +29,6 @@ pub type Account = String;
 
 pub type Amount = u128;
 pub type TxHash = String;
-
 
 #[derive(CandidType, Deserialize, Serialize, PartialEq, Eq, Clone, Debug)]
 pub enum Directive {
@@ -246,13 +248,9 @@ pub struct Memo {
 
 impl Memo {
     pub fn convert_to_memo_json(self) -> Result<String, Box<dyn std::error::Error>> {
-        let memo_json= serde_json::to_string_pretty(&self).map_err(|e| {
-            format!(
-                "[generate_ticket] memo convert error: {}",
-                e.to_string()
-            )
-        })?;
-        Ok(memo_json) 
+        let memo_json = serde_json::to_string_pretty(&self)
+            .map_err(|e| format!("[generate_ticket] memo convert error: {}", e.to_string()))?;
+        Ok(memo_json)
     }
 }
 
@@ -359,15 +357,26 @@ pub enum TxAction {
     Burn,
     Mint,
     #[deprecated]
-    RedeemIcpChainKeyAssets(IcpChainKeyToken)
+    RedeemIcpChainKeyAssets(IcpChainKeyToken),
 }
 
 #[derive(
-    CandidType, Deserialize, Serialize, Default, Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Hash,
+    CandidType,
+    Deserialize,
+    Serialize,
+    Default,
+    Clone,
+    Copy,
+    Debug,
+    PartialEq,
+    Eq,
+    PartialOrd,
+    Ord,
+    Hash,
 )]
 pub enum IcpChainKeyToken {
     #[default]
-    CKBTC
+    CKBTC,
 }
 
 #[derive(CandidType, Deserialize, Serialize, Clone, Debug, PartialEq, Eq)]
@@ -741,60 +750,6 @@ impl FromStr for Network {
             _ => Err(Error::CustomError("Bad network".to_string())),
         }
     }
-}
-
-#[derive(CandidType, Deserialize, Debug, Error)]
-pub enum Error {
-    #[error("The topic (`{0}`) already Subscribed")]
-    RepeatSubscription(String),
-
-    #[error("The chain(`{0}`) already exists")]
-    ChainAlreadyExisting(String),
-    #[error("The token(`{0}`) already exists")]
-    TokenAlreadyExisting(String),
-
-    #[error("not supported proposal")]
-    NotSupportedProposal,
-    #[error("proposal error: (`{0}`)")]
-    ProposalError(String),
-
-    #[error("generate directive error for : (`{0}`)")]
-    GenerateDirectiveError(String),
-
-    #[error("the message is malformed and cannot be decoded error")]
-    MalformedMessageBytes,
-    #[error("unauthorized")]
-    Unauthorized,
-    #[error("The `{0}` is deactive")]
-    DeactiveChain(String),
-    #[error("The ticket id (`{0}`) already exists!")]
-    AlreadyExistingTicketId(String),
-    #[error("Not fount the ticket id (`{0}`) !")]
-    NotFoundTicketId(String),
-    #[error("The resubmit ticket id must exist!")]
-    ResubmitTicketIdMustExist,
-    #[error("The resubmit ticket must same as the old ticket!")]
-    ResubmitTicketMustSame,
-    #[error("The resumit ticket sent too often")]
-    ResubmitTicketSentTooOften,
-    #[error("not found chain: (`{0}`)")]
-    NotFoundChain(String),
-    #[error("not found token: (`{0}`)")]
-    NotFoundToken(String),
-    #[error("not found account(`{0}`) token(`{1}`) on the chain(`{2}`")]
-    NotFoundAccountToken(String, String, String),
-    #[error("Not found this token(`{0}`) on chain(`{1}`) ")]
-    NotFoundChainToken(String, String),
-    #[error("Insufficient token (`{0}`) on chain (`{1}`) !)")]
-    NotSufficientTokens(String, String),
-    #[error("The ticket amount(`{0}`) parse error: `{1}`")]
-    TicketAmountParseError(String, String),
-    #[error("ecdsa_public_key failed : (`{0}`)")]
-    EcdsaPublicKeyError(String),
-    #[error("sign_with_ecdsa failed: (`{0}`)")]
-    SighWithEcdsaError(String),
-    #[error("custom error: (`{0}`)")]
-    CustomError(String),
 }
 
 #[derive(candid::CandidType, Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
