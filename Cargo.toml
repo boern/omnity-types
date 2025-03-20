@@ -43,8 +43,8 @@ ic-canisters-http-types = { git = "https://github.com/dfinity/ic", package = "ic
 ic-crypto-sha2 = { git = "https://github.com/dfinity/ic", tag = "release-2024-01-18_23-01" }
 ic-btc-interface = { git = "https://github.com/dfinity/bitcoin-canister", rev = "9b239d1d67253eb14a35be6061e3967d5ec9db9d" }
 ethereum-types = { git = "https://github.com/paritytech/parity-common.git", package = "ethereum-types" }
-# ic-solana = { git = "https://github.com/octopus-network/ic-solana/", branch = "feature/metaplex", package = "ic-solana" }
-ic-solana = { path = "/home/boern/workspace/ultraspace/ic-solana/src/ic-solana" }
+ic-solana = { git = "https://github.com/octopus-network/ic-solana/", branch = "feature/omnity-solana", package = "ic-solana" }
+# ic-solana = { path = "/home/boern/workspace/ultraspace/ic-solana/src/ic-solana" }
 
 # [patch.crates-io.curve25519-dalek]
 # git = "https://github.com/solana-labs/curve25519-dalek.git"
